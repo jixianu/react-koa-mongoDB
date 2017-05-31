@@ -2,10 +2,10 @@
 
 - 前端: react + react-router + redux + antd
 - 后端: node + koa
-- 数据: mongo +  mongoose
+- 数据: mongoDB +  mongoose
 - 构建工具: npm + webpack
 
-##运行
+运行
 
 
 - 安装依赖
@@ -26,6 +26,7 @@
 
 
 ##mongoose
+
 Schema 是定义数据模型，数据操作方法，继承方法
 
     var mongoose = require('mongoose')
@@ -50,13 +51,14 @@ Controll 是暴露的操作具体接口方法
 版本
     node v6.10.3
     npm v3.10.10
-
-
-
                              
-       工具 utils 对请求的封装   ---------> 处理函数   action redux数据行为封装  获取数据后通过action属性给到reducer，然后 ----------------> reducer返回新的数据，给state，然后connect后，在属性中拿到数据
+       工具 utils 对请求的封装   ---------> 处理函数   action redux数据行为封装  获取数据后通过action属性给到reducer
+       然后 ----------------> reducer返回新的数据，给state，然后connect后，在属性中拿到数据
      
-
-
-mongodb
-多表查询   
+     
+配置
+    当前端运行时，发出http请求时，在webpack中配置了proxy代理，会将符合条件的请求(api)代理到本地启动的localhost:3000端口node服务器，
+    这样就可以处理8080端口到3000端口的跨域问题
+    
+数据保存
+    使用mongoose来定义需要存储的数据模型
